@@ -202,21 +202,24 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
         double amountToConvertion = Double.parseDouble(txtConvert.getText());
-        
-        if(fromComboBox.getSelectedItem().equals("Euros")){
-            if(toComboBox.getSelectedItem().equals("Dollars")){
-                String result = String.format("%.2f", amountToConvertion * eurosToDollars);
-                resultConverter.setText(txtConvert.getText() +" € (EUR) = " +result + " $ (USD)");
+        if(amountToConvertion > 0){
+            if(fromComboBox.getSelectedItem().equals("Euros")){
+                if(toComboBox.getSelectedItem().equals("Dollars")){
+                    String result = String.format("%.2f", amountToConvertion * eurosToDollars);
+                    resultConverter.setText(txtConvert.getText() +" € (EUR) = " +result + " $ (USD)");
+                }else{
+                    resultConverter.setText(txtConvert.getText()+" € (EUR) = " +txtConvert.getText()+ " € (EUR)");
+                }
             }else{
-                resultConverter.setText(txtConvert.getText()+" € (EUR) = " +txtConvert.getText()+ " € (EUR)");
+                if(toComboBox.getSelectedItem().equals("Euros")){
+                    String result = String.format("%.2f", amountToConvertion * dollarsToEuros);
+                    resultConverter.setText(txtConvert.getText() +" $ (USD) = " +result + " € (EUR)");
+                }else{
+                    resultConverter.setText(txtConvert.getText()+" $ (USD) = " +txtConvert.getText()+ " $ (USD)");
+                }
             }
         }else{
-            if(toComboBox.getSelectedItem().equals("Euros")){
-                String result = String.format("%.2f", amountToConvertion * dollarsToEuros);
-                resultConverter.setText(txtConvert.getText() +" $ (USD) = " +result + " € (EUR)");
-            }else{
-                resultConverter.setText(txtConvert.getText()+" $ (USD) = " +txtConvert.getText()+ " $ (USD)");
-            }
+            resultConverter.setText("No se admiten valores negativos, prueba nuevamente");
         }
     }//GEN-LAST:event_convertButtonActionPerformed
 
