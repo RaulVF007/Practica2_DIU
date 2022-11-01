@@ -79,7 +79,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         });
 
         euroDollarConversion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        euroDollarConversion.setText("1 € = 0,98 $");
+        euroDollarConversion.setText("1 € = 0,99$");
         euroDollarConversion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         resultConverter.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -159,7 +159,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addComponent(euroDollarConversion, javax.swing.GroupLayout.PREFERRED_SIZE, 16, Short.MAX_VALUE)
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(fromComboBox, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE))
